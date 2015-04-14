@@ -1,0 +1,268 @@
+*{
+	 padding : 0;
+	 margin : 0;
+	 border : 0;
+}
+body{
+	 background-size : 100% auto;
+	 background-color:#FFF;
+	 height: 100%;
+}
+
+.blended_grid{
+	 display : block;
+	 height: 700px;
+	 width : 1200px;
+	 overflow : auto;
+	 margin : 0;
+}
+.logo{
+ 
+ 	text-align: center;
+	border-radius: 0;
+	bottom: 0;
+
+}
+
+.home{
+	width: 200px;
+	background-color: #FFF;
+	color: #F33;
+	padding-top: 9px;
+	padding-bottom: 2px;
+	padding-right: 10px;
+}
+
+.me{
+	width: 200px;
+	background-color: #FFF;
+	color: #F33;
+	padding-top: 2px;
+	padding-bottom: 2px;
+		padding-right: 10px;
+}
+
+.cv{
+	width: 200px;
+	background-color: #FFF;
+	color: #F33;
+	padding-top: 2px;
+	padding-bottom: 2px;
+		padding-right: 10px;
+}
+
+.git{
+	width: 200px;
+	background-color: #FFF;
+	color: #F33;
+	padding-top: 5px;
+	padding-bottom: 5px;
+		padding-right: 20px;
+}
+
+
+.gallery{
+	width: 200px;
+	background-color: #FFF;
+	color: #F33;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.contact{
+	width: 200px;
+	color: #F00;
+	font-size:14px;
+	font-family: "Aldrich";
+	/*font-style:italic;*/
+	padding-top: 3px;
+	border-top: 1px solid #F60;
+	text-align:right;
+	}
+
+.yourSlider{
+}
+
+.menu{
+	width: auto;
+	height: auto;
+	font-family: "Geo";
+	color: #FFF;
+	text-align: right;
+	bottom: 15px;
+	font-size: 25px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+
+}
+
+.tab{
+	
+	 float : left;
+	 clear : none;
+	 height : 100%;
+	 width : 80px;
+}
+
+
+
+.left{
+	 float : left;
+	 clear : none;
+	 height: 600px;
+	 width : 200px; 
+	 background-color: #FFF;
+
+}
+
+.blank{
+	width: 200px;
+	height: 150px;
+	font-family: "Geo";
+	color: #FFF;
+	text-align: left;
+	font-size: 60px;
+	margin-left:0px;
+	background-color: #FFF;
+	
+}
+
+.top{
+	width: auto;
+	height: 20px;
+	text-align: left;
+	bottom: 0;
+	font-family: "Geo";
+	font-size: 100px;
+	
+}
+
+.main{
+	vertical-align:top;
+   	display:table-cell;
+	 clear : none;
+	 height : 100%;
+	 width : 1200px;
+
+}
+
+.content{
+	float: left;
+	margin-left: 30px;
+	margin-right: 30px;
+	width: 800px;
+	margin-top: 10px;
+	font-family: 'Josefin Slab', serif;
+	font-size: 16px;
+	text-align: justify;
+	 line-height:115%;
+	 color: #000;
+	
+
+}
+
+
+.content_gallery{
+	float: left;
+	margin-left: 60px;
+	width: 800px;
+	margin-top: 10px;
+	font-family: 'Josefin Slab', serif;
+	font-size: 16px;
+	text-align: justify;
+	 line-height:115%;
+	 color: #000;
+	
+
+}
+
+.picture{
+	float : left;
+	clear : none;
+	width : auto;
+	margin-left: 15px;
+	margin-top: 205px;
+	width : auto;
+	text-align: left;
+
+	
+}
+
+.space_home{
+	float: left;
+	height: 216px;	
+}
+.arrow-right {
+	float: left;
+	width: 0; 
+	height: 0; 
+	border-top: 6px solid #F99;
+	border-bottom: 26px solid #F99;
+	border-right: 40px solid #F99;
+	border-left: 40px solid #F99;
+}
+
+
+a:link {
+	color: #F33;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #F33;
+}
+a:hover {
+	text-decoration: none;
+	color: #F33;
+}
+a:active {
+	text-decoration: none;
+	color: #F33;
+}
+
+
+.heading {
+	font-family: "Geo";
+	font-size: 35px;
+	color: #F63;
+}
+
+
+.heading2 {
+	font-family: "Geo";
+	font-size: 25px;
+	color: #333;
+}
+
+.heading3 {
+	font-family: 'Josefin Slab', serif;
+	font-size: 19px;
+	color: #000;
+	line-height:120%;
+}
+
+.worktime{
+	font-family:'Josefin Slab', serif;
+	font-size: 16px;
+	color: #06C;
+}
+
+.subheading3{
+	font-family: 'Josefin Slab', serif;
+	font-size: 16px;
+	font-style:italic;
+	color: #000;
+}
+
+
+.bullet {
+	width: auto;
+}
+
+li{
+	list-style-type: square;
+	list-style-position: outside;
+	margin-left: 16px;
+	text-indent: 0em;
+}
+

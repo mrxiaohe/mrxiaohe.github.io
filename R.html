@@ -1,0 +1,323 @@
+<!-- 
+<body>
+<div style="display: block; font-family: Verdana, Geneva, Arial; font-size: 10px">
+The University of Southern California does not screen or control the content on this website and thus does not guarantee the accuracy, integrity, or quality of such content.  All content on this website is provided by and is the sole responsibility of the person from which such content originated, and such content does not necessarily reflect the opinions of the University administration or the Board of Trustees
+</div>
+</body>-->
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="blended_layout_me.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Josefin Slab">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Old Standard TT">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Nova+Square">
+	<link href='http://fonts.googleapis.com/css?family=Josefin+Slab:100' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Share+Tech+Mono' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Codystar' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Geo' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=League+Script' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Nixie+One' rel='stylesheet' type='text/css'>
+	<link rel="shortcut icon" href="browsericon.ico"/>
+	 <title>Xiao He</title>
+	 <meta name="description" content="Write some words to describe your html page">
+</head>
+<body>
+<div class="blended_grid">
+	<div class="tab">
+    	
+    </div>
+	<div class="left">
+       <div class="menu">
+        <!-- <img src="logo.svg" class="logo" width="70"> -->
+        <div class="blank">
+        	<div class="logo">
+            	<img src="logo_orange.png" height="200">
+                </div>
+            </div>
+        
+        </div>
+     	
+        <div class="menu">
+        <br />
+        </div>
+        <div class="menu">
+        	<div class="home">
+           		<a href="index.html">
+            		 home&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            	</a>
+            
+           </div>
+        </div>
+        <div class="menu">
+        	<div class="me">
+            		
+            	<a href="index.html">about me&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </a>    
+            </div>
+        </div>
+        <div class="menu">
+        	<div class="cv">
+            <a href="cv.pdf"  target="_blank">cv&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+            
+            </div>
+        </div>
+        
+            <div class="menu">
+        	<div class="git">
+        		<font color="#FF9999">r code&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
+        	
+            
+            </div>
+        </div>
+        
+        <div class="menu">
+        	<div class="git">
+        		<a href="http://goo.gl/KgUadL"  target="_blank">github&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        	
+            
+            </div>
+        </div>
+    
+        <div class="menu">
+        	<div class="gallery">
+            <a href="gallery.html">gallery&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </a>
+            </div>
+        	
+        </div>
+        <div class="menu">
+        <br />
+         <br />
+          
+        </div>
+        <div class="menu">
+        	<div class="contact">xiaohe<font color="#000">at</font>xiaohe<font color="#000">dot</font>co&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        	
+        </div>
+	</div>
+	<div class="main">
+    	<div class="name">
+       &nbsp;
+        </div>
+        <div class="content">
+      
+        <span class=heading>R code</span>
+        <br /><br />
+        Below are some functions I wrote . If you have questions, email me at xiaohe at xiaohe dot co. All the functions shown below (plus more) can also be found in my Github repository.
+        <br />
+        <br />
+        <br />
+        <span class=heading2b><li>tsplot</li></span>
+        <br />
+        <div class=bullet>
+        This function was originally written to plot self-paced reading time data but can be used to plot many other types of data, including time series data.
+        <br />
+        <code>
+        <pre><font color="#3333CC">
+tsplot(dv, ts, factors=NULL, dataset, errbar=TRUE, whisker=.015, 
+       cex.pch=1, pch.col=NULL, conf.level=.95, args.errbar=NULL, 
+       xlab=NULL, ylab=NULL, cex.lab=NULL, main=NULL, cex.main=NULL, 
+       text=NULL, cex.axis=NULL, type="b", lty=1, col="black",pch=20, 
+       legend=TRUE, args.legend=NULL, axes=TRUE, ylim, bg.col=NULL, 
+       grid.col=NULL, args.grid=NULL, mar=NULL, box.col=NULL, box.lwd=0.8, 
+       xaxp=NULL, args.xlab=NULL, args.ylab=NULL, args.xaxis=NULL,
+       args.yaxis=NULL,...) </font></pre>
+		</code>
+        <br />
+        <br />
+        <code><font color="#3333CC">dv:</font></code> <span class="code_descript"> The outcome variable to be plotted. </span><br />
+    <code><font color="#3333CC">ts:</font></code> <span class="code_descript"> The time variable; can be other types of variables, 
+                          						  e.g. a multilevel categorical variable. </span><br />
+    <code><font color="#3333CC">factors:</font></code><span class="code_descript"> Grouping factors. </span><br />
+    <code><font color="#3333CC">dataset:</font></code><span class="code_descript"> The data frame that stores the variables to be plotted. </span><br />
+            <br />
+
+<br />
+<font style="font-weight:bold">
+Example
+</font>
+<div class="codebox">
+<pre><code class="code_run"> > data(ChickWeight)
+ > head(ChickWeight)
+ Grouped Data: weight ~ Time | Chick
+   weight Time Chick Diet
+ 1     42    0     1    1
+ 2     51    2     1    1
+ 3     59    4     1    1
+ 4     64    6     1    1
+ 5     76    8     1    1
+ 6     93   10     1    1
+
+ > tsplot(weight, Time, Diet, ChickWeight,
+          errbar=FALSE,
+          text=paste("T", 1:12, sep=""),
+          col=2:5,
+          args.legend=list(x="bottomright", 
+                           legend=paste("Diet", 1:4), 
+                           bty="n"),
+          ylab="Weight (g)",
+          main="Effect of Diet Type on Chick Weight across Time")</code></pre>
+      </div>
+      <br />
+      <br />
+      <span class="bullet">Output </span>
+      <p class="plot"><img src="http://imagizer.imageshack.us/v2/640x480q90/94/rplot2.png" width="618" height="465" alt="sprplot" /></p>
+     </div>
+      <br />
+      <br />
+      <br />
+      <br />
+    
+          
+<span class=heading2b><li>bar</li></span> 
+          
+                      <br />
+                      
+            <span class="code_descript"> 
+            	This is a function wrapper for <code>barplot()</code> and includes some added features that may be convenient for many people.</span><br />
+            </span>
+      		<br />
+            <font color="#3333CC"><code><pre>bar(dv, factors, dataframe, percentage=FALSE, errbar=!percentage, 
+    half.errbar=TRUE, conf.level=0.95, xlab=NULL, ylab=NULL, main=NULL, 
+    names.arg=NULL, bar.col="black", whisker=0.015, args.errbar=NULL, 
+    legend=TRUE, legend.text=NULL, args.legend=NULL, legend.border=FALSE, 
+    box=TRUE, args.yaxis=NULL, mar=c(5, 4, 3, 2), ...) 
+    </pre>
+    </code></font>
+    
+    <code><font color="#3333CC">dv:</font></code> <span class="code_descript"> The outcome variable to be plotted. </span><br />
+    <code><font color="#3333CC">factors:</font></code><span class="code_descript"> Grouping factors; a maximum of two allowed. </span><br />
+    <code><font color="#3333CC">dataframe:</font></code><span class="code_descript"> A data frame object in which data are stored. </span><br />
+    <code><font color="#3333CC">percentage:</font></code><span class="code_descript">  Logical; whether the plot will be on the percentage scale; 
+    													  this option works only if the dv contains 0's and 1's (binary outcomes). </span><br />
+    <code><font color="#3333CC">dataframe:</font></code><span class="code_descript"> A data frame object in which data are stored. </span><br />
+    <br />
+    
+        <font style="font-weight:bold">
+Example
+</font><br />
+    <span class="code_descript">We will use the dataset <code>WeightLoss</code> from the package <code>car</code> for this example. 
+    							First, we will transform the dataset from the wide form to the long form using <code>melt()</code> 
+                                from the <code>reshape</code> package</span> 
+    <br />
+    <br />
+    <div class="codebox">
+ <pre><code class="code_run"> > install.packages("reshape")    #install `reshape` if you don't have it
+ > library(reshape)
+ > library(car)
+ > data(WeightLoss)
+
+ > WL <- melt(WeightLoss[,1:4], id.vars="group", variable_name="week")
+ > head(WL)
+       group week value
+   1 Control  wl1     4
+   2 Control  wl1     4
+   3 Control  wl1     4
+   4 Control  wl1     3
+   5 Control  wl1     5
+   6 Control  wl1     6
+ 
+ > bar(value, 
+       c(week, group), 
+       WL, 
+       legend.text=paste("Week", 1:3),  
+       names.arg=c("Control", "Diet", "Deit + Exercise"))</code></pre>
+      </div>
+      <br />
+      <br />
+      <span class="bullet">Output </span>
+      <p class="plot"><img src="http://www-scf.usc.edu/~hex/chickweight.jpg" width="618" alt="" /></p>
+         
+      <br />
+      <br />
+      <br />
+      <br />
+        
+        <span class=heading2b><li>eye.map</li></span> 
+        <br />
+        <span class="code_descript"> 
+            	This function creates a heatmap (based on eye-fixation/mouse coordinates) on top of a picture stimulus.</span><br />
+            </span>
+      		<br />
+            <font color="#3333CC"><code><pre>eye.map(image.source, data, xvar, yvar, y0top=TRUE, xlab=NULL, ylab=NULL,
+        title=NULL, geom="polygon")
+    </pre>
+    </code></font>
+    <code><font color="#3333CC">image.source:</font></code> <span class="code_descript"> Path to an image file. </span><br />
+    <code><font color="#3333CC">data:</font></code><span class="code_descript"> Dataset in which eye fixation or mouse coordinates are stored. </span><br />
+    <code><font color="#3333CC">xvar:</font></code><span class="code_descript"> Name of the column that stores x coordinates. </span><br />
+    <code><font color="#3333CC">yvar:</font></code><span class="code_descript"> Name of the column that stores y coordinates. </span><br />
+    <code><font color="#3333CC">y0top:</font></code><span class="code_descript"> Logical; whether 0 of y-axis starts from top or bottom; TRUE: from top. </span><br />
+    <code><font color="#3333CC">geom:</font></code><span class="code_descript"> Type of geometric shape to be drawn; polygon by default. </span><br />
+    <br />
+    
+	 <font style="font-weight:bold">Example</font><br />
+    <span class="code_descript">We will use a sample eye fixation dataset and a sample picture stimulus from my experiment. </span> 
+
+    <br />
+    <br />
+    <div class="codebox">
+ <pre><code class="code_run"> > install.packages("ggplot2")  #install "ggplot2" if you don't have it
+ > install.packages("png")      #install "png" if you don't have it
+ 
+ > #This will download an PNG image.
+ > download.file("http://xiaohe.co/target.png", "target.png")  
+   trying URL 'http://xiaohe.co/target.png'
+   Content type 'image/png' length 318705 bytes (311 Kb)
+   opened URL
+   ==================================================
+   downloaded 311 Kb
+
+ > data <- read.table("http://xiaohe.co/eye.heatmap.sample.txt")
+ > head(data)
+        gaze_x gaze_y
+   1960  580.5  369.2
+   1961  580.6  369.1
+   1962  580.9  369.1
+   1963  580.6  368.9
+   1964  580.6  368.6
+   1965  580.6  368.6
+
+ > eye.map(image.source = "target.png",
+           data = data, 
+           xvar = "gaze_x", 
+           yvar = "gaze_y", 
+           y0top = TRUE )</code></pre>
+      </div>
+      <br />
+      <br />
+      <span class="bullet">Output </span>
+      <p class="plot"><img src="http://www-scf.usc.edu/~hex//eyeheatmap.png" width="620" height="400" alt="sprplot" /></p> 
+          
+          <br />
+          <br />
+          <br />
+          <br />
+          
+      
+        
+        	<br /><br /><br /><br /><br />
+      
+        </div>
+	</div>
+
+</div>
+<script type="text/javascript">
+	
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-39358266-1']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+    	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+   		ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  	})();
+
+	</script>
+  
+
+</body>
+</html>
