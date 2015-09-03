@@ -357,6 +357,11 @@ treeJSON = d3.json("flare.json", function(error, treeData) {
         // Compute the new tree layout.
         var nodes = tree.nodes(root).reverse(),
             links = tree.links(nodes);
+        // ##########################################################################
+        // ADDED STUFF
+        node.append("circle")
+            .attr("r", 4.5);
+        // ##########################################################################
 
         // Set widths between levels based on maxLabelLength.
         nodes.forEach(function(d) {
