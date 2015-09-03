@@ -33,9 +33,7 @@ var tree = d3.layout.tree()
                var width = a.width + b.width,
                    distance = width / 2 + 16; // horizontal distance between nodes = 16
                    return distance;
-           }),
-    nodes = tree.nodes(data),
-    links = tree.links(nodes);
+           });
 var diagonal = d3.svg.diagonal()
     .projection(function(d) { return [d.y, d.x]; });
 var svg = d3.select("body").append("svg")
