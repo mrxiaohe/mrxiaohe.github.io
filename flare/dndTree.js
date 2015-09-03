@@ -7,7 +7,7 @@ treeJSON = d3.json("flare.json", function(error, treeData) {
     var selectedNode = null;
     var draggingNode = null;
     // panning variables
-    var panSpeed = 500;
+    var panSpeed = 50;
     var panBoundary = 20; // Within 20px from edges will pan when dragging.
     // Misc. variables
     var i = 0;
