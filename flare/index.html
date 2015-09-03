@@ -22,8 +22,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 <script>
 var margin = {top: 20, right: 120, bottom: 20, left: 120},
-    width = 2500 - margin.right - margin.left,
-    height = 1000 - margin.top - margin.bottom;
+    width = 1600 - margin.right - margin.left,
+    height = 800 - margin.top - margin.bottom;
 var i = 0,
     duration = 750,
     root;
@@ -57,7 +57,7 @@ function update(source) {
   var nodes = tree.nodes(root).reverse(),
       links = tree.links(nodes);
   // Normalize for fixed-depth.
-  nodes.forEach(function(d) { d.y = d.depth * 180; });
+  nodes.forEach(function(d) { d.y = d.depth * 290; });
   // Update the nodes…
   var node = svg.selectAll("g.node")
       .data(nodes, function(d) { return d.id || (d.id = ++i); });
