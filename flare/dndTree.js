@@ -351,17 +351,12 @@ treeJSON = d3.json("flare.json", function(error, treeData) {
             }
         };
         childCount(0, root);
-        var newHeight = d3.max(levelWidth) * 35; // 25 pixels per line  
+        var newHeight = d3.max(levelWidth) * 45; // 25 pixels per line  
         tree = tree.size([newHeight, viewerWidth]);
 
         // Compute the new tree layout.
         var nodes = tree.nodes(root).reverse(),
             links = tree.links(nodes);
-        // ##########################################################################
-        // ADDED STUFF
-        node.append("circle")
-            .attr("r", 4.5);
-        // ##########################################################################
 
         // Set widths between levels based on maxLabelLength.
         nodes.forEach(function(d) {
@@ -376,7 +371,11 @@ treeJSON = d3.json("flare.json", function(error, treeData) {
             .data(nodes, function(d) {
                 return d.id || (d.id = ++i);
             });
-
+           // ##########################################################################
+        // ADDED STUFF
+        node.append("circle")
+            .attr("r", 4.5);
+        // ##########################################################################
         // Enter any new nodes at the parent's previous position.
         var nodeEnter = node.enter().append("g")
             .call(dragListener)
