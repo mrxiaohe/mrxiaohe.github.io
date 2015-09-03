@@ -375,6 +375,10 @@ treeJSON = d3.json("flare.json", function(error, treeData) {
         // ADDED STUFF
         node.append("circle")
             .attr("r", 4.5);
+        node.append("text")
+            .attr("dx", 12)
+            .attr("dy", ".35em")
+            .text(function(d) { return d.name });
         // ##########################################################################
         // Enter any new nodes at the parent's previous position.
         var nodeEnter = node.enter().append("g")
