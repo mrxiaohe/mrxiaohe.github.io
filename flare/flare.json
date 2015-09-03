@@ -1,69 +1,69 @@
 {
-name: "Financial Crimes",
-children: [
+"name": "Financial Crimes",
+"children": [
 {
-name: "Investment Frauds",
-children: [
+"name": "Investment Frauds",
+"children": [
 {
-name: "Promissory Note Frauds"
+"name": "Promissory Note Frauds"
 },
 {
-name: "Ponzi Schemes"
+"name": "Ponzi Schemes"
 },
 {
-name: "Prime Bank Frauds"
+"name": "Prime Bank Frauds"
 },
 {
-name: "Affinity Frauds"
+"name": "Affinity Frauds"
 },
 {
-name: "Markets and Exchanges and Trading Frauds",
-children: [
+"name": "Markets and Exchanges and Trading Frauds",
+"children": [
 {
-name: "Worthless Stock Swaps"
+"name": "Worthless Stock Swaps"
 },
 {
-name: "Chop Stocks"
+"name": "Chop Stocks"
 },
 {
-name: "False Prospectus Frauds"
+"name": "False Prospectus Frauds"
 },
 {
-name: "Market Manipulation Frauds",
-children: [
+"name": "Market Manipulation Frauds",
+"children": [
 {
-name: "Fictitious Sales Frauds"
+"name": "Fictitious Sales Frauds"
 },
 {
-name: "Pump and Dump Schemes"
+"name": "Pump and Dump Schemes"
 },
 {
-name: "Trading Against Frauds"
+"name": "Trading Against Frauds"
 },
 {
-name: "Front Running Frauds"
+"name": "Front Running Frauds"
 },
 {
-name: "Match Trading Frauds"
+"name": "Match Trading Frauds"
 },
 {
-name: "Wash Trading Frauds"
+"name": "Wash Trading Frauds"
 },
 {
-name: "Trading Ahead Frauds"
+"name": "Trading Ahead Frauds"
 },
 {
-name: "Prearranged Trading Frauds"
+"name": "Prearranged Trading Frauds"
 }
 ]
 },
 {
-name: "Insider Trading"
+"name": "Insider Trading"
 }
 ]
 },
 {
-name: "Oil and Gas Frauds"
+"name": "Oil and Gas Frauds"
 }
 ]
 }
