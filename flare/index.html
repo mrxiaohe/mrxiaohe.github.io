@@ -150,7 +150,8 @@ function update(source) {
 // Insert the rect before the text element
   nodeEnter.insert('rect', 'text')
     .attr("width", maxTextWidth)
-    .attr("height", rectH);
+    .attr("height", rectH)
+    .style("fill", function(d) { return d._children ? "lightsteelblue" : "#FFF"; });
  
  
 
