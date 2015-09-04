@@ -149,6 +149,9 @@ treeJSON = d3.json("flare.json", function(error, treeData) {
         .attr("class", "overlay")
         .call(zoomListener);
 
+    var g = svg.append('g') 
+    g.append('rect') 
+    g.append('text') 
 
     // Define the drag listeners for drag/drop behaviour of nodes.
     dragListener = d3.behavior.drag()
@@ -452,7 +455,7 @@ treeJSON = d3.json("flare.json", function(error, treeData) {
 
         // Fade the text in
         nodeUpdate.select("text")
-            .style("fill-opacity", 1);
+            .style("fill-opacity", 0.4);
 
         // Transition exiting nodes to the parent's new position.
         var nodeExit = node.exit().transition()
