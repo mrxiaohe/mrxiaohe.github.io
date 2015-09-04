@@ -91,6 +91,25 @@ function update(source) {
       .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
       .on("click", click);
 
+  var textGroup = nodeEnter.append('g');
+
+  textGroup.append("rect")
+      // .attr("x" , function(d) { return d.children || d._children ? 20 : -20; })
+      .attr("x" , '0')
+      .attr("y" , '0' )
+      .attr('height' , '14px')
+      .attr('width' , function(d) { return d.name.length * 10});
+
+  textGroup.append("text")
+      // .attr("x", function(d) { return d.children || d._children ? 20 : -20; })
+      .attr("x", '0')
+      .attr("y", "12px")
+      //.attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
+      .text(function(d) { return d.name; })
+      .style("fill-opacity", 1e-6)
+      .attr("class", "shadow");
+
+
   nodeEnter.append("circle")
       .attr("r", 1e-6)
       .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
@@ -142,18 +161,6 @@ function update(source) {
   link.transition()
       .duration(duration)
       .attr("d", diagonal);
-
-  var maxTextWidth = d3.max(text, function() {
-    return d3.select(this).node().getBBox();
-  });
-
-// Insert the rect before the text element
-  nodeEnter.insert('rect', 'text')
-    .attr("width", maxTextWidth)
-    .attr("height", rectH)
-    .style("fill", function(d) { return d._children ? "lightsteelblue" : "#FFF"; });
- 
- 
 
   // Transition exiting nodes to the parent's new position.
   link.exit().transition()
