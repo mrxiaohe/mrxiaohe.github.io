@@ -47,6 +47,13 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+var g = svg.append('g') 
+g.append('rect') 
+    .attr("width", "100%")
+    .attr("height", "100%")
+    .attr("fill", "pink");
+g.append('text') 
+
 d3.json("flare.json", function(error, flare) {
   if (error) throw error;
 
@@ -154,9 +161,7 @@ function update(source) {
     d.y0 = d.y;
   });
 }
-var g = svg.append('g') 
-g.append('rect') 
-g.append('text') 
+
 
 // Toggle children on click.
 function click(d) {
