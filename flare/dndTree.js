@@ -1,4 +1,7 @@
 treeJSON = d3.json("flare.json", function(error, treeData) {
+console.log(treeData);
+console.log(error);
+console.log(treeJSON);
 
     // Calculate total nodes, max label length
     var totalNodes = 0;
@@ -7,7 +10,7 @@ treeJSON = d3.json("flare.json", function(error, treeData) {
     var selectedNode = null;
     var draggingNode = null;
     // panning variables
-    var panSpeed = 50;
+    var panSpeed = 200;
     var panBoundary = 20; // Within 20px from edges will pan when dragging.
     // Misc. variables
     var i = 0;
@@ -51,6 +54,7 @@ treeJSON = d3.json("flare.json", function(error, treeData) {
     }, function(d) {
         return d.children && d.children.length > 0 ? d.children : null;
     });
+	console.log(totalNodes);
 
 
     // sort the tree according to the node names
@@ -149,9 +153,6 @@ treeJSON = d3.json("flare.json", function(error, treeData) {
         .attr("class", "overlay")
         .call(zoomListener);
 
-    var g = svg.append('g') 
-    g.append('rect') 
-    g.append('text') 
 
     // Define the drag listeners for drag/drop behaviour of nodes.
     dragListener = d3.behavior.drag()
@@ -336,8 +337,18 @@ treeJSON = d3.json("flare.json", function(error, treeData) {
         update(d);
         centerNode(d);
     }
+	
+	function clickLink(d) {
+		d = d.target;
+		console.log(d);
+        //if (d3.event.defaultPrevented) return; // click suppressed
+        d = toggleChildren(d);
+        update(d);
+        centerNode(d);
+    }
 
     function update(source) {
+	console.log(treeData);
         // Compute the new height, function counts total children of root node and sets tree height accordingly.
         // This prevents the layout looking squashed when new nodes are made visible or looking sparse when nodes are removed
         // This makes the layout more consistent.
@@ -354,7 +365,7 @@ treeJSON = d3.json("flare.json", function(error, treeData) {
             }
         };
         childCount(0, root);
-        var newHeight = d3.max(levelWidth) * 50; // 25 pixels per line  
+        var newHeight = d3.max(levelWidth) * 25; // 25 pixels per line  
         tree = tree.size([newHeight, viewerWidth]);
 
         // Compute the new tree layout.
@@ -363,7 +374,7 @@ treeJSON = d3.json("flare.json", function(error, treeData) {
 
         // Set widths between levels based on maxLabelLength.
         nodes.forEach(function(d) {
-            d.y = (d.depth * (maxLabelLength * 21)); //maxLabelLength * 10px
+            d.y = (d.depth * (maxLabelLength * 10)); //maxLabelLength * 10px
             // alternatively to keep a fixed scale one can set a fixed depth per level
             // Normalize for fixed-depth by commenting out below line
             // d.y = (d.depth * 500); //500px per level.
@@ -374,15 +385,7 @@ treeJSON = d3.json("flare.json", function(error, treeData) {
             .data(nodes, function(d) {
                 return d.id || (d.id = ++i);
             });
-           // ##########################################################################
-        // ADDED STUFF
-      //  node.append("circle")
-      //      .attr("r", 4.5);
-        //node.append("text")
-          //  .attr("dx", 12)
-            //.attr("dy", ".35em")
-            //.text(function(d) { return d.name });
-        // ##########################################################################
+
         // Enter any new nodes at the parent's previous position.
         var nodeEnter = node.enter().append("g")
             .call(dragListener)
@@ -411,7 +414,7 @@ treeJSON = d3.json("flare.json", function(error, treeData) {
             .text(function(d) {
                 return d.name;
             })
-            .style("fill-opacity", 1);
+            .style("fill-opacity", 0);
 
         // phantom node to give us mouseover in a radius around it
         nodeEnter.append("circle")
@@ -419,13 +422,13 @@ treeJSON = d3.json("flare.json", function(error, treeData) {
             .attr("r", 30)
             .attr("opacity", 0.2) // change this to zero to hide the target area
         .style("fill", "red")
-            //.attr('pointer-events', 'mouseover')
-            //.on("mouseover", function(node) {
-            //    overCircle(node);
-            //})
-            //.on("mouseout", function(node) {
-             //   outCircle(node);
-            //});
+            .attr('pointer-events', 'mouseover')
+            .on("mouseover", function(node) {
+                overCircle(node);
+            })
+            .on("mouseout", function(node) {
+                outCircle(node);
+            });
 
         // Update the text to reflect whether node has children or not.
         node.select('text')
@@ -455,7 +458,7 @@ treeJSON = d3.json("flare.json", function(error, treeData) {
 
         // Fade the text in
         nodeUpdate.select("text")
-            .style("fill-opacity", 0.4);
+            .style("fill-opacity", 1);
 
         // Transition exiting nodes to the parent's new position.
         var nodeExit = node.exit().transition()
@@ -489,7 +492,8 @@ treeJSON = d3.json("flare.json", function(error, treeData) {
                     source: o,
                     target: o
                 });
-            });
+            })
+            .on('click', clickLink);
 
         // Transition links to their new position.
         link.transition()
@@ -525,6 +529,11 @@ treeJSON = d3.json("flare.json", function(error, treeData) {
     root = treeData;
     root.x0 = viewerHeight / 2;
     root.y0 = 0;
+	
+	// Collapse all children of roots children before rendering.
+	root.children.forEach(function(child){
+		collapse(child);
+	});
 
     // Layout the tree initially and center on the root node.
     update(root);
