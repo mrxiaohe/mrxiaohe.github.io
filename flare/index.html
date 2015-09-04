@@ -143,6 +143,17 @@ function update(source) {
       .duration(duration)
       .attr("d", diagonal);
 
+  var maxTextWidth = d3.max(text, function() {
+    return d3.select(this).node().getBBox();
+  });
+
+// Insert the rect before the text element
+  nodeEnter.insert('rect', 'text')
+    .attr("width", maxTextWidth)
+    .attr("height", rectH);
+ 
+ 
+
   // Transition exiting nodes to the parent's new position.
   link.exit().transition()
       .duration(duration)
