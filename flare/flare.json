@@ -1,9 +1,9 @@
 {
 "name": "Financial Crimes",
-"_children": [
+"children": [
 {
 "name": "Investment Frauds",
-"_children": [
+"children": [
 {
 "name": "Promissory Note Frauds"
 },
@@ -18,7 +18,7 @@
 },
 {
 "name": "Markets and Exchanges and Trading Frauds",
-"_children": [
+"children": [
 {
 "name": "Worthless Stock Swaps"
 },
@@ -30,7 +30,7 @@
 },
 {
 "name": "Market Manipulation Frauds",
-"_children": [
+"children": [
 {
 "name": "Fictitious Sales Frauds"
 },
