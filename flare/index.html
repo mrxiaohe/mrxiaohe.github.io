@@ -50,9 +50,6 @@ var svg = d3.select("body").append("svg")
 var g = svg.append('g') 
 g.append('rect') 
 g.append('text') 
-    .attr("width", "100%")
-    .attr("height", "100%")
-    .attr("fill", "pink");
 
 d3.json("flare.json", function(error, flare) {
   if (error) throw error;
