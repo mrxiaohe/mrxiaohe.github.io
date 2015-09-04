@@ -416,13 +416,13 @@ treeJSON = d3.json("flare.json", function(error, treeData) {
             .attr("r", 30)
             .attr("opacity", 0.2) // change this to zero to hide the target area
         .style("fill", "red")
-            .attr('pointer-events', 'mouseover')
-            .on("mouseover", function(node) {
-                overCircle(node);
-            })
-            .on("mouseout", function(node) {
-                outCircle(node);
-            });
+            //.attr('pointer-events', 'mouseover')
+            //.on("mouseover", function(node) {
+            //    overCircle(node);
+            //})
+            //.on("mouseout", function(node) {
+             //   outCircle(node);
+            //});
 
         // Update the text to reflect whether node has children or not.
         node.select('text')
