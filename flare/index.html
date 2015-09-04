@@ -44,7 +44,7 @@ var diagonal = d3.svg.diagonal()
 var svg = d3.select("body").append("svg")
     .attr("width", width + margin.right + margin.left)
     .attr("height", height + margin.top + margin.bottom)
-  .append("g")
+    .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 //var g = svg.append('g') 
@@ -93,15 +93,7 @@ function update(source) {
 
   var textGroup = nodeEnter.append('g');
 
-  textGroup.append("rect")
-      // .attr("x" , function(d) { return d.children || d._children ? 20 : -20; })
-      .attr("x" , '0')
-      .attr("y" , '0' )
-      .attr('height' , '14px')
-      .attr('width' , function(d) { return d.name.length * 1})
-      .style("fill", "FFF");
-
-  textGroup.append("text")
+    textGroup.append("text")
       .attr("x", function(d) { return d.children || d._children ? 20 : -20; })
       .attr("x", '0')
       .attr("y", "14px")
@@ -110,6 +102,15 @@ function update(source) {
       .text(function(d) { return d.name; })
       .style("fill-opacity", 1e-6)
       .attr("class", "shadow");
+  
+   textGroup.append("rect")
+      // .attr("x" , function(d) { return d.children || d._children ? 20 : -20; })
+      .attr("x" , '0')
+      .attr("y" , '0' )
+      .attr('height' , '14px')
+      .attr('width' , function(d) { return d.name.length * 1})
+      .style("fill", "FFF");
+
 
 
   nodeEnter.append("circle")
