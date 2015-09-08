@@ -64,7 +64,26 @@
 			   	   .attr("fill", function( d ){
 			   			return "rgb(150, 220, " + (d * 10) + ")";
 				   });
-			
+				svg.selectAll("text")
+				   .data(dataset)
+				   .enter()
+				   .append("text")
+				   .attr("class", "myLabels")
+				   .transition()
+					   .delay(function(d, i){
+					   		return i * 100;
+				   		})
+			   	   .text(function(d){
+			   			return d;
+				   })
+				   .attr("x", function(d, i){
+				   		return xScale( i ) + xScale.rangeBand()/2;
+				   })
+				   .attr("y", function( d ){
+			   			return  yScale( d ) - 2;
+				   })
+				   .attr("text-anchor", "middle")
+				   .attr("fill", "red");
 
 				svg.append("g")
 				   .attr("class", "x axis")
@@ -77,25 +96,19 @@
 
 				d3.select("p")
 				  .on("click", function(){
-				  	for(var i = 0; i < 2; i++ ){
-				  		var newNumber = Math.floor(Math.random()*25 );
-				  		dataset.push( newNumber );
-				  	}
-
+				  		dataset.shift();
 				xScale.domain(d3.range(dataset.length))
 							         .rangeRoundBands([padding, w - padding], 0.05);
 				yScale.domain([ 0, d3.max(dataset)])
 							         .range([ h - padding, padding ]);				
+				var bars = svg.selectAll("rect")
+				   .data(dataset);
+				var texts = svg.selectAll(".myLabels")
+					.data(dataset);
 				
-			     /* var bars = svg.selectAll("rect")
-				   	   .data(dataset)
-				  .enter()
+				  bars.enter()
 				   	   .append("rect")
-				   	   .transition()
-				   	   .duraton(500)
-				   	   .attr("x", function(d, i){
-				   			return xScale(i)
-				   		})
+				   	   .attr("x", w - padding)
 				   	   .attr("y", function( d ){
 			   				return yScale( d );
 				   		})
@@ -106,39 +119,53 @@
 			   	       .attr("fill", function( d ){
 			   				return "rgb(150, 220, " + (d * 10) + ")";
 				        });
-*/
+			   	 
+				
 
-				var bars = svg.selectAll("rect")
-				   .data(dataset);
+			   	  bars.transition()
+			   	  .duration(500)
+			   	  .attr("x", function(d, i) { return xScale(i); })
+			   	  .attr("y", function(d ) { return yScale(d);})
+			   	  .attr("width", xScale.rangeBand())
+			   	  .attr("height", function(d) {return  h - yScale( d ) - padding - 1;});
 
-				   bars.enter()
-				   .append("rect")
-				   .attr("x", w - padding)
-				   .attr("y", function( d ){
-			   			return yScale( d ) ;
-				   	})
-				   .attr("width", xScale.rangeBand())
-				   .attr("height", function(d){
-					   	return  h - yScale( d ) - padding;
-				   })
-				   .attr("fill", function( d ){
-			   			return "rgb(150, 220, " + (d * 10) + ")";
-				   })
-				bars.transition()
-				    .duration(500)
-				    .attr("x", function(d, i){
-				   		return xScale( i );
-				    })
-				    .attr("y", function( d ){
-			   			return yScale( d );
-				    })
-				    .attr("width", xScale.rangeBand())
-				    .attr("height", function(d){
-					   	return  h - yScale( d ) - padding  - 1;
-				    });
-				   
-			  
-					 
+			   	  bars.exit()
+				  	 .transition()
+				  	 .duration(500)
+				  	 .attr("x", w - padding)
+				  	 .remove(); 
+
+				texts.enter()
+					 .append("text")
+					 .attr("class","myLabels")
+					 .text(function(d){ return d; })
+					 .attr("x", w - padding)
+					 .attr("y", function( d ){
+			   				return yScale( d ) - 2;
+				     })
+					 .attr("text-anchor", "middle")
+					 .attr("fill", "red");
+
+			    texts.transition()
+			         .duration(500)
+				   	 .text(function(d){
+				   			return d;
+					   })
+					 .attr("x", function(d, i){
+					   		return xScale( i ) + xScale.rangeBand()/2;
+					 })
+					 .attr("y", function( d ){
+			   				return yScale( d ) - 2;
+				      })
+					 .attr("text-anchor", "middle")
+					 .attr("fill", "red");
+			    
+			    texts.exit()
+				  	 .transition()
+				  	 .duration(500)
+				  	 .attr("x", w - padding)
+				  	 .remove(); 
+				
 				svg.select( ".x.axis")
 				   .transition()
 				   .duration(1000)
@@ -147,6 +174,9 @@
 				   .transition()
 				   .duration(1000)
 				   .call(yAxis);
+			        
+				
+ 
 			        
 				  });
 
