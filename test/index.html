@@ -64,25 +64,7 @@
 			   	   .attr("fill", function( d ){
 			   			return "rgb(150, 220, " + (d * 10) + ")";
 				   });
-				svg.selectAll("text")
-				   .data(dataset)
-				   .enter()
-				   .append("text")
-				   .transition()
-					   .delay(function(d, i){
-					   		return i * 100;
-				   		})
-			   	   .text(function(d){
-			   			return d;
-				   })
-				   .attr("x", function(d, i){
-				   		return xScale( i ) + xScale.rangeBand()/2;
-				   })
-				   .attr("y", function( d ){
-			   			return  yScale( d ) - 2;
-				   })
-				   .attr("text-anchor", "middle")
-				   .attr("fill", "red");
+			
 
 				svg.append("g")
 				   .attr("class", "x axis")
@@ -155,34 +137,7 @@
 					   	return  h - yScale( d ) - padding  - 1;
 				    });
 				   
-			    var texts = svg.selectAll("text")
-					           .data(dataset);
-			    texts.enter()
-					 .append("text")
-					 .text(function(d){ return d; })
-					 .attr("x", w - padding)
-					 .attr("y", function( d ){
-			   				return yScale( d ) - 2;
-				     })
-					 .attr("text-anchor", "middle")
-					 .attr("fill", "red");
-
-			    texts.transition()
-			         .duration(500)
-					 .delay(function(d, i){
-					   		return i * 100;
-				   	  })
-				   	 .text(function(d){
-				   			return d;
-					   })
-					 .attr("x", function(d, i){
-					   		return xScale( i ) + xScale.rangeBand()/2;
-					 })
-					 .attr("y", function( d ){
-			   				return yScale( d ) - 2;
-				      })
-					 .attr("text-anchor", "middle")
-					 .attr("fill", "red");
+			  
 					 
 				svg.select( ".x.axis")
 				   .transition()
