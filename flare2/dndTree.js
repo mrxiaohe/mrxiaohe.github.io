@@ -351,7 +351,7 @@ treeJSON = d3.json("finance.json", function(error, treeData) {
             }
         };
         childCount(0, root);
-        var newHeight = d3.max(levelWidth) * 50; // 25 pixels per line  
+        var newHeight = d3.max(levelWidth) * 35; // 25 pixels per line  
         tree = tree.size([newHeight, viewerWidth]);
 
         // Compute the new tree layout.
@@ -360,7 +360,7 @@ treeJSON = d3.json("finance.json", function(error, treeData) {
 
         // Set widths between levels based on maxLabelLength.
         nodes.forEach(function(d) {
-            d.y = (d.depth * (maxLabelLength * 8)); //maxLabelLength * 10px
+            d.y = (d.depth * (maxLabelLength * 7)); //maxLabelLength * 10px
             // alternatively to keep a fixed scale one can set a fixed depth per level
             // Normalize for fixed-depth by commenting out below line
             // d.y = (d.depth * 500); //500px per level.
@@ -419,15 +419,15 @@ treeJSON = d3.json("finance.json", function(error, treeData) {
                             .duration( 100 )
                             .attr( "fill", "black" );
                         })
-                       .each( function( d ) { d.width = this.getBBox( ).width + 8; } )
+                       .each( function( d ) { d.width = this.getBBox( ).width; } )
                        .attr( "text-anchor", function( d ) { return d.children || d._children ? "end" : "start"; })
                        .attr( "x", function( d ) { return d.children || d._children ? -10 : 10; })
                        .attr( "dy", "0.35em" )
                        .style( "fill-opacity", 1e-6 );
 
-  rects.attr( "x" , function( d ) { return d.children || d._children ? -10 - d.width + 4: 10 - 4; })
+  rects.attr( "x" , function( d ) { return d.children || d._children ? -10 - d.width: 10; })
        .attr( "y", "-0.5em" )
-       .attr( 'height' , '18px' )
+       .attr( 'height' , '1em' )
        .style( 'fill', 'white' )
        .style( 'fill-opacity', 1e-6  )
        .attr( 'width' , function( d ) { return d.width; });
@@ -470,7 +470,7 @@ treeJSON = d3.json("finance.json", function(error, treeData) {
             //.style("fill-opacity", .2)
             //.transition()
             //.duration(100)
-            .style("fill-opacity", 0.8);
+            .style("fill-opacity", 0.7);
 
         // Transition exiting nodes to the parent's new position.
         var nodeExit = node.exit().transition()
