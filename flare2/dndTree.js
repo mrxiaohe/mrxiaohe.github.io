@@ -351,7 +351,7 @@ treeJSON = d3.json("finance.json", function(error, treeData) {
             }
         };
         childCount(0, root);
-        var newHeight = d3.max(levelWidth) * 40; // 25 pixels per line  
+        var newHeight = d3.max(levelWidth) * 50; // 25 pixels per line  
         tree = tree.size([newHeight, viewerWidth]);
 
         // Compute the new tree layout.
@@ -360,7 +360,7 @@ treeJSON = d3.json("finance.json", function(error, treeData) {
 
         // Set widths between levels based on maxLabelLength.
         nodes.forEach(function(d) {
-            d.y = (d.depth * (maxLabelLength * 10)); //maxLabelLength * 10px
+            d.y = (d.depth * (maxLabelLength * 8)); //maxLabelLength * 10px
             // alternatively to keep a fixed scale one can set a fixed depth per level
             // Normalize for fixed-depth by commenting out below line
             // d.y = (d.depth * 500); //500px per level.
@@ -388,19 +388,6 @@ treeJSON = d3.json("finance.json", function(error, treeData) {
                 return d._children ? "#EEB4B4" : "#fff";
             });
 
-       // nodeEnter.append("text")
-       //     .attr("x", function(d) {
-       //         return d.children || d._children ? -10 : 10;
-       //     })
-       //     .attr("dy", ".35em")
-       //     .attr('class', 'nodeText')
-       //     .attr("text-anchor", function(d) {
-       //         return d.children || d._children ? "end" : "start";
-       //     })
-       //     .text(function(d) {
-       //         return d.name;
-       //     })
-       //     .style("fill-opacity", 0);
 
         // phantom node to give us mouseover in a radius around it
         nodeEnter.append("circle")
@@ -421,15 +408,15 @@ treeJSON = d3.json("finance.json", function(error, treeData) {
   var texts = textGroup.append( "text" )
                        .text( function( d ) { return d.name; } )
                        .on( "mouseover", function( d ){
-                          d3.select( this )
+                            d3.select( this )
                             .transition( )
-                            .duration( 250 )
+                            .duration( 100 )
                             .attr( "fill", "red" );
                        })
                        .on( "mouseout", function( d ){
                           d3.select( this )
                             .transition( )
-                            .duration( 250 )
+                            .duration( 100 )
                             .attr( "fill", "black" );
                         })
                        .each( function( d ) { d.width = this.getBBox( ).width + 8; } )
@@ -442,7 +429,7 @@ treeJSON = d3.json("finance.json", function(error, treeData) {
        .attr( "y", "-0.5em" )
        .attr( 'height' , '18px' )
        .style( 'fill', 'white' )
-       .style( 'fill-opacity', 0.8 )
+       .style( 'fill-opacity', 1e-6  )
        .attr( 'width' , function( d ) { return d.width; });
 
 
@@ -475,7 +462,15 @@ treeJSON = d3.json("finance.json", function(error, treeData) {
 
         // Fade the text in
         nodeUpdate.select("text")
+            //.style("fill-opacity", .5)
+            //.transition()
+            //.duration(50)
             .style("fill-opacity", 1);
+        nodeUpdate.select("rect")
+            //.style("fill-opacity", .2)
+            //.transition()
+            //.duration(100)
+            .style("fill-opacity", 0.8);
 
         // Transition exiting nodes to the parent's new position.
         var nodeExit = node.exit().transition()
@@ -489,6 +484,8 @@ treeJSON = d3.json("finance.json", function(error, treeData) {
             .attr("r", 0);
 
         nodeExit.select("text")
+            .style("fill-opacity", 0);
+        nodeExit.select("rect")
             .style("fill-opacity", 0);
 
         // Update the links…
