@@ -12,12 +12,13 @@
   .node circle {
     fill: #fff;
     stroke: red;
-    stroke-width: 2px;
+    stroke-width: 1.5px;
   }
    
   .node text {
-    font-size:12px; 
-    font-family:sans-serif;
+    font-size: 0.75em; 
+    font-family:'Dosis', sans-serif;
+    font-weight: 300;
   }
    
   .link {
@@ -37,9 +38,13 @@
        display: none;
   }
 </style>
+
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="d3.v3.js"></script>
 <script src="dndTree.js"></script>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Dosis:300,400' rel='stylesheet' type='text/css'>
+</head>
 <body>
     <div id="tree-container"></div>
 </body>
