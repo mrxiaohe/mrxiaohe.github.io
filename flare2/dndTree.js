@@ -405,23 +405,23 @@ treeJSON = d3.json("finance.json", function(error, treeData) {
                 .style("stroke", "red")
                 .style("fill-opacity", 1); 
             });*/
-        nodeEnter.append("circle")
-                 .attr('class', 'clickCircle')
-                 .attr("r", 0)
-                 .style("stroke-width", 1)
-                 .on("click", function(d){
-                    d3.select( this )
-                    .transition()
-                    .duration( 500)
-                    .attr("r", 20)
-                    .style("stroke", "red")
-                    .style("stroke-width", 0.5)
-                    .transition()
-                    .duration( 500)
-                    .attr("r", 4.5)
-                    .style("stroke-width", 1)
-                    .style("stroke", "red")
-                });
+        //nodeEnter.append("circle")
+        //         .attr('class', 'clickCircle')
+         //        .attr("r", 0)
+         //        .style("stroke-width", 1)
+      //           .on("click", function(d){
+        //            d3.select( this )
+        //            .transition()
+       //             .duration( 500)
+       //             .attr("r", 20)
+       //             .style("stroke", "red")
+        //            .style("stroke-width", 0.5)
+        //            .transition()
+        //            .duration( 500)
+         //           .attr("r", 4.5)
+        //            .style("stroke-width", 1)
+         //           .style("stroke", "red")
+         //       });
                  
             
 
@@ -460,11 +460,11 @@ treeJSON = d3.json("finance.json", function(error, treeData) {
                         })
                        .each( function( d ) { d.width = this.getBBox( ).width; } )
                        .attr( "text-anchor", function( d ) { return d.children || d._children ? "end" : "start"; })
-                       .attr( "x", function( d ) { return d.children || d._children ? -10 : 10; })
+                       .attr( "x", function( d ) { return d.children || d._children ? -5 : 5; })
                        .attr( "dy", "0.35em" )
                        .style( "fill-opacity", 1e-6 );
 
-  rects.attr( "x" , function( d ) { return d.children || d._children ? -10 - d.width: 10; })
+  rects.attr( "x" , function( d ) { return d.children || d._children ? -5 - d.width: 5; })
        .attr( "y", "-0.5em" )
        .attr( 'height' , '1em' )
        .style( 'fill', 'white' )
@@ -475,7 +475,7 @@ treeJSON = d3.json("finance.json", function(error, treeData) {
         // Update the text to reflect whether node has children or not.
         node.select('text')
             .attr("x", function(d) {
-                return d.children || d._children ? -10 : 10;
+                return d.children || d._children ? -5 : 5;
             })
             .attr("text-anchor", function(d) {
                 return d.children || d._children ? "end" : "start";
@@ -509,7 +509,7 @@ treeJSON = d3.json("finance.json", function(error, treeData) {
             //.style("fill-opacity", .2)
             //.transition()
             //.duration(100)
-            .style("fill-opacity", 0.7);
+            .style("fill-opacity", 0.8);
 
         // Transition exiting nodes to the parent's new position.
         var nodeExit = node.exit().transition()
