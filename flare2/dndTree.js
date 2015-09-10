@@ -461,7 +461,7 @@ treeJSON = d3.json("finance.json", function(error, treeData) {
                        .each( function( d ) { d.width = this.getBBox( ).width; } )
                        .attr( "text-anchor", function( d ) { return d.children || d._children ? "end" : "start"; })
                        .attr( "x", function( d ) { return d.children || d._children ? -10 : 10; })
-                       .attr( "dy", "0.35em" )
+                       .attr( "dy", "0.30em" )
                        .style( "fill-opacity", 1e-6 );
 
   rects.attr( "x" , function( d ) { return d.children || d._children ? -10 - d.width: 10; })
