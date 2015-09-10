@@ -1,4 +1,4 @@
-treeJSON = d3.json("assettype.json", function(error, treeData ) {
+treeJSON = d3.json("assettype.json", function(error, treeData) {
 
     // Calculate total nodes, max label length
     var totalNodes = 0;
@@ -384,10 +384,30 @@ treeJSON = d3.json("assettype.json", function(error, treeData ) {
         nodeEnter.append("circle")
             .attr('class', 'nodeCircle')
             .attr("r", 0)
+            .style("stroke-width", 1)
             .style("fill", function(d) {
                 return d._children ? "#EEB4B4" : "#fff";
+            })
+            .on("click", function(d){
+                d3.select( this )
+                .transition()
+                .duration( 500)
+                .attr("r", 20)
+                .style("fill-opacity", 0.1)
+                .attr("fill", "#EEB4B4")
+                .style("stroke", "red")
+                .style("stroke-width", 0.5)
+                .transition()
+                .duration( 500)
+                .attr("r", 4.5)
+                .style("fill", function(d) {
+                    return d._children ? "#EEB4B4" : "#fff";
+                })
+                .style("stroke-width", 1)
+                .style("stroke", "red")
+                .style("fill-opacity", 1); 
             });
-
+            
 
         // phantom node to give us mouseover in a radius around it
         nodeEnter.append("circle")
@@ -402,6 +422,8 @@ treeJSON = d3.json("assettype.json", function(error, treeData ) {
             .on("mouseout", function(node) {
                 outCircle(node);
             });
+    // change this to zero to hide the target area
+
 
   var textGroup = nodeEnter.append( 'g' );
   var rects = textGroup.append( "rect" );
@@ -431,7 +453,6 @@ treeJSON = d3.json("assettype.json", function(error, treeData ) {
        .style( 'fill', 'white' )
        .style( 'fill-opacity', 1e-6  )
        .attr( 'width' , function( d ) { return d.width; });
-
 
 
         // Update the text to reflect whether node has children or not.
