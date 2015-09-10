@@ -1,4 +1,4 @@
-treeJSON = d3.json("assettype.json", function(error, treeData) {
+treeJSON = d3.json("https://raw.githubusercontent.com/mrxiaohe/mrxiaohe.github.io/master/flare2/assettype.json", function(error, treeData) {
 
     // Calculate total nodes, max label length
     var totalNodes = 0;
@@ -360,7 +360,7 @@ treeJSON = d3.json("assettype.json", function(error, treeData) {
 
         // Set widths between levels based on maxLabelLength.
         nodes.forEach(function(d) {
-            d.y = (d.depth * (maxLabelLength * 15)); //maxLabelLength * 10px
+            d.y = (d.depth * (maxLabelLength * 30)); //maxLabelLength * 10px
             // alternatively to keep a fixed scale one can set a fixed depth per level
             // Normalize for fixed-depth by commenting out below line
             // d.y = (d.depth * 500); //500px per level.
@@ -383,12 +383,12 @@ treeJSON = d3.json("assettype.json", function(error, treeData) {
 
         nodeEnter.append("circle")
             .attr('class', 'nodeCircle')
-            .attr("r", 0)
+            .attr("r", 4.5)
             .style("stroke-width", 1)
             .style("fill", function(d) {
                 return d._children ? "#EEB4B4" : "#fff";
-            })
-            .on("click", function(d){
+            });
+            /*.on("click", function(d){
                 d3.select( this )
                 .transition()
                 .duration( 500)
@@ -400,13 +400,29 @@ treeJSON = d3.json("assettype.json", function(error, treeData) {
                 .transition()
                 .duration( 500)
                 .attr("r", 4.5)
-                .style("fill", function(d) {
-                    return d._children ? "#EEB4B4" : "#fff";
-                })
+                .style("fill",  "#fff")
                 .style("stroke-width", 1)
                 .style("stroke", "red")
                 .style("fill-opacity", 1); 
-            });
+            });*/
+        nodeEnter.append("circle")
+                 .attr('class', 'clickCircle')
+                 .attr("r", 0)
+                 .style("stroke-width", 1)
+                 .on("click", function(d){
+                    d3.select( this )
+                    .transition()
+                    .duration( 500)
+                    .attr("r", 20)
+                    .style("stroke", "red")
+                    .style("stroke-width", 0.5)
+                    .transition()
+                    .duration( 500)
+                    .attr("r", 4.5)
+                    .style("stroke-width", 1)
+                    .style("stroke", "red")
+                });
+                 
             
 
         // phantom node to give us mouseover in a radius around it
@@ -423,6 +439,7 @@ treeJSON = d3.json("assettype.json", function(error, treeData) {
                 outCircle(node);
             });
     // change this to zero to hide the target area
+
 
 
   var textGroup = nodeEnter.append( 'g' );
@@ -467,6 +484,7 @@ treeJSON = d3.json("assettype.json", function(error, treeData) {
                 return d.name;
             });
 
+        // Change the circle fill depending on whether it has children and is collapsed
         // Change the circle fill depending on whether it has children and is collapsed
         node.select("circle.nodeCircle")
             .attr("r", 4.5)
