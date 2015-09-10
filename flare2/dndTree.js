@@ -1,4 +1,4 @@
-treeJSON = d3.json("https://raw.githubusercontent.com/mrxiaohe/mrxiaohe.github.io/master/flare2/assettype.json", function(error, treeData) {
+treeJSON = d3.json("finance.json", function(error, treeData) {
 
     // Calculate total nodes, max label length
     var totalNodes = 0;
@@ -351,7 +351,7 @@ treeJSON = d3.json("https://raw.githubusercontent.com/mrxiaohe/mrxiaohe.github.i
             }
         };
         childCount(0, root);
-        var newHeight = d3.max(levelWidth) * 35; // 25 pixels per line  
+        var newHeight = d3.max(levelWidth) * 25; // 25 pixels per line  
         tree = tree.size([newHeight, viewerWidth]);
 
         // Compute the new tree layout.
@@ -360,7 +360,7 @@ treeJSON = d3.json("https://raw.githubusercontent.com/mrxiaohe/mrxiaohe.github.i
 
         // Set widths between levels based on maxLabelLength.
         nodes.forEach(function(d) {
-            d.y = (d.depth * (maxLabelLength * 30)); //maxLabelLength * 10px
+            d.y = (d.depth * (maxLabelLength * 7)); //maxLabelLength * 10px
             // alternatively to keep a fixed scale one can set a fixed depth per level
             // Normalize for fixed-depth by commenting out below line
             // d.y = (d.depth * 500); //500px per level.
