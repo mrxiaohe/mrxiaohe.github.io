@@ -460,11 +460,11 @@ treeJSON = d3.json("finance.json", function(error, treeData) {
                         })
                        .each( function( d ) { d.width = this.getBBox( ).width; } )
                        .attr( "text-anchor", function( d ) { return d.children || d._children ? "end" : "start"; })
-                       .attr( "x", function( d ) { return d.children || d._children ? -5 : 5; })
+                       .attr( "x", function( d ) { return d.children || d._children ? -10 : 10; })
                        .attr( "dy", "0.35em" )
                        .style( "fill-opacity", 1e-6 );
 
-  rects.attr( "x" , function( d ) { return d.children || d._children ? -5 - d.width: 5; })
+  rects.attr( "x" , function( d ) { return d.children || d._children ? -10 - d.width: 10; })
        .attr( "y", "-0.5em" )
        .attr( 'height' , '1em' )
        .style( 'fill', 'white' )
@@ -475,7 +475,7 @@ treeJSON = d3.json("finance.json", function(error, treeData) {
         // Update the text to reflect whether node has children or not.
         node.select('text')
             .attr("x", function(d) {
-                return d.children || d._children ? -5 : 5;
+                return d.children || d._children ? -10 : 10;
             })
             .attr("text-anchor", function(d) {
                 return d.children || d._children ? "end" : "start";
