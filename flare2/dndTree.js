@@ -509,7 +509,7 @@ treeJSON = d3.json("finance.json", function(error, treeData) {
             //.style("fill-opacity", .2)
             //.transition()
             //.duration(100)
-            .style("fill-opacity", 0.9);
+            .style("fill-opacity", 1);
 
         // Transition exiting nodes to the parent's new position.
         var nodeExit = node.exit().transition()
