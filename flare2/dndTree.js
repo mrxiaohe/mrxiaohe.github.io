@@ -1,4 +1,4 @@
-treeJSON = d3.json("bribe.json", function(error, treeData) {
+treeJSON = d3.json("bribe.json" , function(error, treeData) {
 
     // Calculate total nodes, max label length
     var totalNodes = 0;
