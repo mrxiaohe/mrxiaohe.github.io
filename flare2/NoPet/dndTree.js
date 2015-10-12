@@ -1,4 +1,4 @@
-treeJSON = d3.json("training.json" , function(error, treeData) {
+treeJSON = d3.json("nola.json" , function(error, treeData) {
 
     // Calculate total nodes, max label length
     var totalNodes = 0;
