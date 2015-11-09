@@ -1,4 +1,4 @@
-treeJSON = d3.json("mrxiaohe.github.io/flare/flare.json", function(error, treeData) {
+treeJSON = d3.json("financialcrime.json", function(error, treeData) {
 
     // Calculate total nodes, max label length
     var totalNodes = 0;
