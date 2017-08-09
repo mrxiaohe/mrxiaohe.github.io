@@ -94,9 +94,20 @@
                                ]
                  },
                 {"name": "Production", 
-                 "_children": [{"name": "Matter Preparation"},
-                               {"name": "Data Processing/Loading"}, 
-                               {"name": "Management of Relativity DB & Review Workflow"} 
+                 "_children": [{"name": "Client Approves Set"},
+                               {"name": "Production Reports"},
+                               {"name": "Update Prod Set"},
+                               {"name": "Deliver Media"},
+                               {"name": "imaging (ecap)"},
+                               {"name": "branding"},
+                               {"name": "bates stamping"},
+                               {"name": "Priv log creation"},
+                               {"name": "Run Priv Log Script"},
+                               {"name": "Export Request"},
+                               {"name": "Generate PDF Request"},
+                               {"name": "Tiff Request"},
+                               {"name": "Redaction"},
+                               {"name": "Clawback"} 
                               ]
                 }
                ]
