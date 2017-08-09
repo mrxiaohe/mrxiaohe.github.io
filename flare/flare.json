@@ -1,71 +1,27 @@
-{
-"name": "Financial Crimes",
-"children": [
-{
-"name": "Investment Frauds",
-"children": [
-{
-"name": "Promissory Note Frauds"
-},
-{
-"name": "Ponzi Schemes"
-},
-{
-"name": "Prime Bank Frauds"
-},
-{
-"name": "Affinity Frauds"
-},
-{
-"name": "Markets and Exchanges and Trading Frauds",
-"children": [
-{
-"name": "Worthless Stock Swaps"
-},
-{
-"name": "Chop Stocks"
-},
-{
-"name": "False Prospectus Frauds"
-},
-{
-"name": "Market Manipulation Frauds",
-"children": [
-{
-"name": "Fictitious Sales Frauds"
-},
-{
-"name": "Pump and Dump Schemes"
-},
-{
-"name": "Trading Against Frauds"
-},
-{
-"name": "Front Running Frauds"
-},
-{
-"name": "Match Trading Frauds"
-},
-{
-"name": "Wash Trading Frauds"
-},
-{
-"name": "Trading Ahead Frauds"
-},
-{
-"name": "Prearranged Trading Frauds"
+{"name": "ProSearch",
+ "_children": [ {"name": "Matter Preparation", "_children": [{"name": "Planning call"},
+                                                             {"name": "Relativity Review DB Setup"}, 
+                                                             {"name": "Source Set Update"}, 
+                                                             {"name": "FTP Request"}, 
+                                                             {"name": "Training Request"}, 
+                                                             {"name": "Source Set Update"}
+                                                             ]
+                 },
+                {"name": "Data processing/loading", "_children": [{"name": "Receive data"},
+                                                             {"name": "Process Data"}, 
+                                                             {"name": "Thread Data"}, 
+                                                             {"name": "Crack Passwords"}, 
+                                                             {"name": "Load Data"}, 
+                                                             {"name": "OCR Data"}
+                                                             ] 
+                },
+                {"name": "Relativity DB/review management", "_children": [{"name": "Add Users"},
+                                                             {"name": "Support login issues"}, 
+                                                             {"name": "Build Layouts"}, 
+                                                             {"name": "End User Training"}, 
+                                                             {"name": "Load Data"} 
+                                                                          ]
+                }
+               ]
 }
-]
-},
-{
-"name": "Insider Trading"
-}
-]
-},
-{
-"name": "Oil and Gas Frauds"
-}
-]
-}
-]
-}
+                
