@@ -70,7 +70,26 @@
                                               {"name": "Pivot Report/Analysis"},
                                               {"name": "Non-standard Reporting"}
                                              ]
-                                }
+                                },
+                               {"name": "FPR -> SPR (QC)", 
+                                "_children": [{"name": "Search"},
+                                              {"name": "Batch"},
+                                              {"name": "Release Documents"},
+                                              {"name": "(Relativity Updates)"},
+                                              {"name": "Review Progress Reporting"},
+                                              {"name": "Annotation Adjustment"},
+                                              {"name": "Persistent Highlight Request"},
+                                              {"name": "QC-123(4)"},
+                                              {"name": "Report on Review Progress"},
+                                              {"name": "Remove from Review"},
+                                              {"name": "Script Access Request"},
+                                              {"name": "Privilege/BEP Review"},
+                                              {"name": "Foreign Language Review"},
+                                              {"name": "BOD/Exec Comm Review"},
+                                              {"name": "Review Progress Reporting"},
+                                              {"name": "Non-standard Reporting"}
+                                             ]
+                                },
 
                                ]
                   }
