@@ -16,7 +16,6 @@
                                               {"name": "Investigate Exceptions"}, 
                                               {"name": "Thread Data"},
                                               {"name": "Crack Passwords"},
-                                              {"name": "Thread Data"},
                                               {"name": "Build Index(es)"},
                                               {"name": "Load Data"},
                                               {"name": "OCR Data"},
@@ -24,7 +23,24 @@
                                               {"name": "Source Loading"},
                                               {"name": "Translated Document Request"}
                                              ]
+                                },
+                                {"name": "Management of Relativity DB & Review Workflow", 
+                                "_children": [{"name": "Add Users"},
+                                              {"name": "Edit Permissions"},
+                                              {"name": "Build Custom Views"},
+                                              {"name": "Build Layouts"},
+                                              {"name": "Build Coding Palettes"},
+                                              {"name": "Support login issues"},
+                                              {"name": "Support viewer issues"},
+                                              {"name": "Node Status Request"},
+                                              {"name": "Placeholder Meeting"},
+                                              {"name": "End User Training"},
+                                              {"name": "Review Setup Request"},
+                                              {"name": "SourceSet Management Request"},
+                                              {"name": "Update Request"}
+                                             ]
                                 }
+
                                ]
                   }
                 ]
