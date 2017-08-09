@@ -109,6 +109,9 @@
                                {"name": "Redaction"},
                                {"name": "Clawback"} 
                               ]
+                },
+                {"name": "Matter Close-Out", 
+                 "_children": [{"name": "Database Deactivation"}]
                 }
                ]
 }
