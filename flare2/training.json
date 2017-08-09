@@ -1,30 +1,12 @@
 {"name": "Request Taxonomy", 
  "_children": [ {"name": "Processing, Review & Analsyis", 
                  "_children": [{"name": "Matter Preparation", 
-                                "_children": [{"name": "Data Processing/Loading", "_children": [{"name": "Poo"}, 
-                                                                                       {"name": "Poop"}, 
-                                                                                       {"name": "Urinate"}, 
-                                                                                       {"name": "Tinkle"}, 
-                                                                                       {"name": "Pee"}
-                                                                                      ]
-                                               }, 
-                                              {"name": "Data Processing/Loading", "_children": [{"name": "Poo"}, 
-                                                                                       {"name": "Poop"}, 
-                                                                                       {"name": "Urinate"}, 
-                                                                                       {"name": "Tinkle"}, 
-                                                                                       {"name": "Pee"}
-                                                                                      ]
-                                               }, 
-                                               {"name": "Methods", "_children": [{"name": "Potty parties"}, 
-                                                                                 {"name": "Potty bootcamp"}, 
-                                                                                 {"name": "Elimination communication"}
-                                                                                ]
-                                               }, 
-                                               {"name": "Clothes", "_children": [{"name": "Pull-ups"}, 
-                                                                                 {"name": "Underpants"}, 
-                                                                                 {"name": "Diapers"}
-                                                                                ]
-                                               }
+                                "_children": [{"name": "Planning Call"}, 
+                                              {"name": "Relativity Review DB Setup"}, 
+                                              {"name": "Source Set Update"}, 
+                                              {"name": "Conflict Check"}, 
+                                              {"name": "FTP Request"},
+                                              {"name": "Training Request"} 
                                              ]
                                 },
                                 {"name": "Shopping"
