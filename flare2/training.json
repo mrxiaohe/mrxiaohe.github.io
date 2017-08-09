@@ -92,6 +92,12 @@
                                 }
 
                                ]
-                  }
-                ]
+                 },
+                {"name": "Production", 
+                 "_children": [{"name": "Matter Preparation"},
+                               {"name": "Data Processing/Loading"}, 
+                               {"name": "Management of Relativity DB & Review Workflow"} 
+                              ]
+                }
+               ]
 }
