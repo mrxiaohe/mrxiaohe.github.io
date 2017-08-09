@@ -62,6 +62,14 @@
                                               {"name": "Pivot Report/Analysis"},
                                               {"name": "Non-standard Reporting"}
                                              ]
+                                },
+                                {"name": "Analytics", 
+                                "_children": [{"name": "PSI 5-Day Process"},
+                                              {"name": "PSI 5-Day Results Reporting"},
+                                              {"name": "Equivio Modelling"},
+                                              {"name": "Pivot Report/Analysis"},
+                                              {"name": "Non-standard Reporting"}
+                                             ]
                                 }
 
                                ]
