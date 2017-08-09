@@ -1,7 +1,13 @@
 {"name": "Request Taxonomy", 
  "_children": [ {"name": "Processing, Review & Analsyis", 
                  "_children": [{"name": "Matter Preparation", 
-                                "_children": [{"name": "Equipment"}, 
+                                "_children": [{"name": "Data Processing/Loading", "_children": [{"name": "Poo"}, 
+                                                                                       {"name": "Poop"}, 
+                                                                                       {"name": "Urinate"}, 
+                                                                                       {"name": "Tinkle"}, 
+                                                                                       {"name": "Pee"}
+                                                                                      ]
+                                               }, 
                                               {"name": "Data Processing/Loading", "_children": [{"name": "Poo"}, 
                                                                                        {"name": "Poop"}, 
                                                                                        {"name": "Urinate"}, 
@@ -20,6 +26,8 @@
                                                                                 ]
                                                }
                                              ]
+                                },
+                                {"name": "Shopping"
                                 }
                                ]
                   }
