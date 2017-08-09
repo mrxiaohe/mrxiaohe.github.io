@@ -9,7 +9,14 @@
                                               {"name": "Training Request"} 
                                              ]
                                 },
-                                {"name": "Shopping"
+                                {"name": "Matter Preparation", 
+                                "_children": [{"name": "Planning Call"}, 
+                                              {"name": "Relativity Review DB Setup"}, 
+                                              {"name": "Source Set Update"}, 
+                                              {"name": "Conflict Check"}, 
+                                              {"name": "FTP Request"},
+                                              {"name": "Training Request"} 
+                                             ]
                                 }
                                ]
                   }
