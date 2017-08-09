@@ -8,26 +8,9 @@
                                                                                   {"name": "FTP Request"}, 
                                                                                   {"name": "Training Request"}
                                                                                  ]
-                                               }, 
-                                               {"name": "Data Processing/Loading", "_children": [{"name": "Poo"}, 
-                                                                                       {"name": "Poop"}, 
-                                                                                       {"name": "Urinate"}, 
-                                                                                       {"name": "Tinkle"}, 
-                                                                                       {"name": "Pee"}
-                                                                                      ]
-                                               }, 
-                                               {"name": "Methods", "_children": [{"name": "Potty parties"}, 
-                                                                                 {"name": "Potty bootcamp"}, 
-                                                                                 {"name": "Elimination communication"}
-                                                                                ]
-                                               }, 
-                                               {"name": "Clothes", "_children": [{"name": "Pull-ups"}, 
-                                                                                 {"name": "Underpants"}, 
-                                                                                 {"name": "Diapers"}
-                                                                                ]
                                                }
-                                             ]
-                                }
+                                              ]
+                                } 
                                ]
                   }
                 ]
