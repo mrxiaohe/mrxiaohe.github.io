@@ -1,15 +1,6 @@
 {"name": "Request Taxonomy", 
  "_children": [ {"name": "Processing, Review & Analsyis", 
-                 "_children": [{"name": "Matter Preparation", 
-                                "_children": [{"name": "Planning Call"}, 
-                                              {"name": "Relativity Review DB Setup"}, 
-                                              {"name": "Source Set Update"}, 
-                                              {"name": "Conflict Check"}, 
-                                              {"name": "FTP Request"},
-                                              {"name": "Training Request"} 
-                                             ]
-                                },
-                                {"name": "Data Processing/Loading", 
+                 "_children": [ {"name": "Processing", 
                                 "_children": [{"name": "Processing Status Reporting"}, 
                                               {"name": "Receive Data at Prosearch"}, 
                                               {"name": "Process Data"}, 
@@ -24,7 +15,7 @@
                                               {"name": "Translated Document Request"}
                                              ]
                                 },
-                                {"name": "Management of Relativity DB & Review Workflow", 
+                                {"name": "Review", 
                                 "_children": [{"name": "Add Users"},
                                               {"name": "Edit Permissions"},
                                               {"name": "Build Custom Views"},
@@ -37,11 +28,8 @@
                                               {"name": "End User Training"},
                                               {"name": "Review Setup Request"},
                                               {"name": "SourceSet Management Request"},
-                                              {"name": "Update Request"}
-                                             ]
-                                },
-                                {"name": "Establish Review Boundary", 
-                                "_children": [{"name": "Search Term Formatting"},
+                                              {"name": "Update Request"},
+                                              {"name": "Search Term Formatting"},
                                               {"name": "Search Term Analysis"},
                                               {"name": "Stop Word Analysis"},
                                               {"name": "Wildcard Analysis"},
@@ -60,19 +48,8 @@
                                               {"name": "Search Term Troubleshooting"},
                                               {"name": "Text Comparison Request"},
                                               {"name": "Pivot Report/Analysis"},
-                                              {"name": "Non-standard Reporting"}
-                                             ]
-                                },
-                                {"name": "Analytics", 
-                                "_children": [{"name": "PSI 5-Day Process"},
-                                              {"name": "PSI 5-Day Results Reporting"},
-                                              {"name": "Equivio Modelling"},
-                                              {"name": "Pivot Report/Analysis"},
-                                              {"name": "Non-standard Reporting"}
-                                             ]
-                                },
-                               {"name": "FPR -> SPR (QC)", 
-                                "_children": [{"name": "Search"},
+                                              {"name": "Non-standard Reporting"},
+                                              {"name": "Search"},
                                               {"name": "Batch"},
                                               {"name": "Release Documents"},
                                               {"name": "(Relativity Updates)"},
@@ -89,8 +66,15 @@
                                               {"name": "Review Progress Reporting"},
                                               {"name": "Non-standard Reporting"}
                                              ]
+                                },
+                                {"name": "Analytics", 
+                                "_children": [{"name": "PSI 5-Day Process"},
+                                              {"name": "PSI 5-Day Results Reporting"},
+                                              {"name": "Equivio Modelling"},
+                                              {"name": "Pivot Report/Analysis"},
+                                              {"name": "Non-standard Reporting"}
+                                             ]
                                 }
-
                                ]
                  },
                 {"name": "Production", 
